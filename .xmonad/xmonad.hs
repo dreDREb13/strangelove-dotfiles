@@ -70,12 +70,12 @@ main	=	do
 					ppSep				=	" \\ ",							--	Set divider between window type
 					ppWsSep				=	" # ",							--	Set dividers between workspaces
 					ppLayout			=	(\x -> case x of					--	Change workspace layout display
-												"Spacing 3 Tall"	->	"^{}"	--	Tall changes to ^{}
-												"Mirror Spacing 3 Tall"	->	"x{}"	--	Mirror Tall changes to x{}
-												"Accordion"		->	"{|}"	--	Accordion changes to {|} 
-												"Full"			->	"{ }"	--	Full changes to {}
-												_			->	x	--	Null
-											)
+											"Spacing 3 Tall"	->	"^{}"		--	Tall changes to ^{}
+											"Mirror Spacing 3 Tall"	->	"x{}"		--	Mirror Tall changes to x{}
+											"Accordion"		->	"{|}"		--	Accordion changes to {|} 
+											"Full"			->	"{ }"		--	Full changes to {}
+											_			->	x		--	Null
+										)
 				},
 			terminal					=	"terminator",						--	Make Terminator default terminal
 			modMask						=	mod4Mask,						--	Rebind Mod to Windows key
@@ -91,8 +91,8 @@ main	=	do
 			((mod4Mask, xK_q),				kill),												--	Kills applications
 			((mod4Mask,	xK_minus),			withFocused (keysResizeWindow (-20,-20) (0,0))),		--	Resize window by -20 pixels	
 			((mod4Mask,	xK_equal),			withFocused (keysResizeWindow (20,20) (0,0))),			--	Resize window by +20 pixels
-			((mod4Mask .|. shiftMask, xK_equal),		withFocused	(keysResizeWindow (0,20) (0,0))),		--	Resize window by +20 pixels down
-			((mod4Mask .|. shiftMask, xK_minus),		withFocused	(keysResizeWindow (0,-20) (0,0))),		--	Resize window by -20 pixels up
+			((mod4Mask .|. shiftMask, xK_equal),		withFocused (keysResizeWindow (0,20) (0,0))),			--	Resize window by +20 pixels from bottom down
+			((mod4Mask .|. shiftMask, xK_minus),		withFocused (keysResizeWindow (0,-20) (0,0))),			--	Resize window by -20 pixels from bottom up
 			((mod4Mask,	xK_Left),			withFocused (keysMoveWindow (-10,0))),				--	Move window 10 pixels left
 			((mod4Mask .|. shiftMask, xK_Left),		withFocused (keysMoveWindow (-50,0))),				--	Move window 50 pixels left
 			((mod4Mask,	xK_Right),			withFocused (keysMoveWindow (10,0))),				--	Move window 10 pixels right
@@ -100,7 +100,7 @@ main	=	do
 			((mod4Mask,	xK_Up),				withFocused (keysMoveWindow (0,-10))),				--	Move window 10 pixels up
 			((mod4Mask .|. shiftMask, xK_Up),		withFocused (keysMoveWindow (0,-50))),				--	Move window 50 pixels up
 			((mod4Mask,	xK_Down),			withFocused (keysMoveWindow (0,10))),				--	Move window 10 pixels down
-			((mod4Mask .|. shiftMask, xK_Down),		withFocused	(keysMoveWindow (0,50))),			--	Move window 50 pixels down
+			((mod4Mask .|. shiftMask, xK_Down),		withFocused (keysMoveWindow (0,50))),				--	Move window 50 pixels down
 			((mod4Mask,	xK_f),				spawn "thunar"),						--	Starts file manager
 			((mod4Mask, xK_b),				spawn "palemoon"),						--	Starts net browser
 			((mod4Mask, xK_e),				spawn "geany"), 						--	Starts text editor
