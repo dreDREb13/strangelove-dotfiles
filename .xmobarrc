@@ -7,12 +7,12 @@ Config	{
 							Run	Memory 				["-t","<usedratio>%"] 10,
 							Run	Date 				"%a %b %_d %l:%M" "date" 10,
 							Run	Com 				"/home/drew/.xmonad/scripts/volume.sh" [] "vol" 1,
-							Run	Com					"/home/drew/.xmonad/scripts/wlan.sh" [] "wifi" 10,
-							Run	Com					"/home/drew/.xmonad/scripts/music.sh" [] "music" 10,
+							Run	Com				"/home/drew/.xmonad/scripts/wlan.sh" [] "wifi" 10,
+							Run	Com				"/home/drew/.xmonad/scripts/music.sh" [] "music" 10,
 							Run	Battery				["-t","<left>%",
-												 	 "-L","20","-H","80",
-													 "-l","#DF7E7E","-n","#8BDAFF","-h","#BDFFA8"
-													 ] 10,
+												 "-L","20","-H","80",
+												 "-l","#DF7E7E","-n","#8BDAFF","-h","#BDFFA8"
+												] 10,
 							Run	StdinReader
 						],  
 			sepChar = "%",
