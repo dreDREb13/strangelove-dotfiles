@@ -1,0 +1,21 @@
+Config	{
+			font = "Gohu Font:size=12:antialias=true",  
+			bgColor = "#544239", -- #6B5448
+			fgColor = "#A7BCBF",  
+			position = Static {xpos = 0 , ypos = 0, width = 1366, height = 16}, 
+			commands =	[
+							Run	Memory 				["-t","<usedratio>%"] 10,
+							Run	Date 				"%a %b %_d %l:%M" "date" 10,
+							Run	Com 				"/home/drew/.xmonad/scripts/volume.sh" [] "vol" 1,
+							Run	Com					"/home/drew/.xmonad/scripts/wlan.sh" [] "wifi" 10,
+							Run	Com					"/home/drew/.xmonad/scripts/music.sh" [] "music" 10,
+							Run	Battery				["-t","<left>%",
+												 	 "-L","20","-H","80",
+													 "-l","#DF7E7E","-n","#8BDAFF","-h","#BDFFA8"
+													 ] 10,
+							Run	StdinReader
+						],  
+			sepChar = "%",
+			alignSep = "}{",
+			template = " %StdinReader%}{%music% <fc=#F3F792>//</fc> WLAN: <fc=#CDDEA6>%wifi%</fc> <fc=#F3F792>//</fc> VOL: <fc=#CDDEA6>%vol%</fc> <fc=#F3F792>//</fc> BAT: <fc=#CDDEA6>%battery%</fc> <fc=#F3F792>//</fc> <fc=#CDDEA6>%date%</fc> "  
+		}
