@@ -49,7 +49,7 @@ defaultLayouts	=	tiled ||| Mirror tiled ||| Accordion ||| Full
 workspaceNet	=	Full
 
 --	Apply changes to myLayout
-myLayout		=	onWorkspace "2:net" workspaceNet $ defaultLayouts
+myLayout	=	onWorkspace "2:net" workspaceNet $ defaultLayouts
 
 --	Begin XMonad
 main	=	do
